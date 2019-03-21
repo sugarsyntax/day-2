@@ -16,8 +16,24 @@
     <div id="app"></div>
 
     <script type="text/babel">
+      function FriendsList(props) {
+        return (
+          <ul>
+            {props.list.map(name => (
+              <li key={name}>{name}</li>
+            ))}
+          </ul>
+        );
+      }
+
       function App() {
-        return <div>Hello World</div>;
+        const friends = ["Jordyn", "Mikenzi", "Jake"];
+
+        return (
+          <div>
+            <FriendsList list={friends} />
+          </div>
+        );
       }
       ReactDOM.render(<App />, document.getElementById("app"));
     </script>
